@@ -21,6 +21,9 @@ public class Calculator implements Cloneable {
     private final int SCALE = 3;
 
     public Calculator(NumberConverter numberRegistry) {
+        if (numberRegistry == null) {
+            throw new IllegalArgumentException("NumberConverter can not be null.");
+        }
         this.numberRegistry = numberRegistry;
     }
 

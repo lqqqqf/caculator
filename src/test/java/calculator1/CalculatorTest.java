@@ -22,6 +22,11 @@ public class CalculatorTest {
         numberRegistry.register("2", "2");
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testNew() {
+        new Calculator(null);
+    }
+
     @Test
     public void testOffset() {
         Calculator c = new Calculator(numberRegistry);
